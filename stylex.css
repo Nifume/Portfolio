@@ -1,0 +1,102 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #6f42c1;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+/* Section */
+.section {
+    padding: 20px;
+}
+
+/* Video container */
+.video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Video card */
+.video-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+}
+
+/* Columns of videos within each section */
+.video-card .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Space between items */
+}
+
+.video-card h3 {
+    margin-bottom: 15px;
+    color: #580a9d;
+}
+
+/* Video item */
+.video-item {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-item h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Video iframe */
+.video-item iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #580a9d;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

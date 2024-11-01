@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Centro de Conocimientos</title>
+    <link rel="stylesheet" href="stylex.css">
+    <script src="./Script.js"></script>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d8c7e4; /* Color de fondo */
+        }
+
+        /* Estilos para la navegación */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #6f42c1; /* Color del menú */
+            padding: 10px;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: none; /* Ocultar el menú por defecto */
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: #6f42c1; /* Color del menú */
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-links.active {
+            display: flex; /* Mostrar el menú cuando esté activo */
+        }
+
+        .nav-links li {
+            padding: 10px;
+            border-bottom: 1px solid #5a329e; /* Color de separación */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Cambiar el menú hamburguesa a un ícono de mano */
+        .menu-toggle {
+            background-image: url('https://media.licdn.com/dms/image/v2/D4D0BAQECvkPGR8k_9A/company-logo_200_200/company-logo_200_200/0/1721234553344/handyuy_logo?e=2147483647&v=beta&t=zVl3CwjLstMPwP5aL8Wc0R0fKvXRplfkN6p7NhArKxs'); /* URL de la imagen de mano */
+            background-size: cover;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        /* Estilos para el contenido principal */
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+            gap: 20px; /* Espaciado entre tarjetas */
+            justify-content: center; /* Centra las tarjetas */
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            flex: 1 1 300px; /* Permite que las tarjetas se ajusten */
+            max-width: 300px; /* Ancho máximo de las tarjetas */
+        }
+
+        .card {
+            background-color: rgb(201, 169, 231);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.2s; /* Efecto al pasar el ratón */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Levanta la tarjeta al pasar el ratón */
+        }
+
+        .btn {
+            background-color: #6f42c1; /* Color del botón */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #5a329e; /* Color del botón al pasar el ratón */
+        }
+
+        /* Estilos para el footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #6f42c1; /* Color del footer */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: static; /* Cambia la posición para dispositivos pequeños */
+                flex-direction: row; /* Cambia a fila en dispositivos pequeños */
+                display: flex; /* Muestra el menú en dispositivos pequeños */
+            }
+
+            .nav-links li {
+                padding: 5px; /* Reduce el espaciado en dispositivos pequeños */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-toggle {
+                width: 25px; /* Ajusta el tamaño del menú de mano */
+                height: 25px;
+            }
+
+            .btn {
+                padding: 8px 12px; /* Ajusta el tamaño del botón en dispositivos pequeños */
+            }
+
+            .card {
+                padding: 15px; /* Ajusta el espaciado de las tarjetas en dispositivos pequeños */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Centro de Conocimientos</h1>
+            </div>
+            <!-- Menu de Mano -->
+            <div class="menu-toggle" id="menu-toggle"></div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="manuales.html">Manuales</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="audios.html">Audios</a></li>
+                <li><a href="diapositivas.html">Diapositivas</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Manuales Section -->
+            <section id="manuales" class="section">
+                <div class="card">
+                    <h2>Manuales</h2>
+                    <p>Encuentra guías y documentos detallados.</p>
+                    <a href="manuales.html"><button class="btn">Ver Manuales</button></a>
+                </div>
+            </section>
+
+            <!-- Videos Section -->
+            <section id="videos" class="section">
+                <div class="card">
+                    <h2>Videos</h2>
+                    <p>Tutoriales y capacitaciones en video.</p>
+                    <a href="videos.html"><button class="btn">Ver Videos</button></a>
+                </div>
+            </section>
+
+            <!-- Audios Section -->
+            <section id="audios" class="section">
+                <div class="card">
+                    <h2>Audios</h2>
+                    <p>Grabaciones de capacitaciones.</p>
+                    <a href="audios.html"><button class="btn">Escuchar Audios</button></a>
+                </div>
+            </section>
+
+            <!-- Diapositivas Section -->
+            <section id="diapositivas" class="section">
+                <div class="card">
+                    <h2>Diapositivas</h2>
+                    <p>Presentaciones de las capacitaciones.</p>
+                    <a href="diapositivas.html"><button class="btn">Ver Diapositivas</button></a>
+                </div>
+            </section>
+
+            <!-- FAQs Section -->
+            <section id="faqs" class="section">
+                <div class="card">
+                    <h2>FAQs</h2>
+                    <p>Respuestas a las preguntas frecuentes.</p>
+                    <a href="faqs.html"><button class="btn">Leer FAQs</button></a>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contacto" class="section">
+                <div class="card">
+                    <h2>Contacto</h2>
+                    <p>Envía tus consultas, sugerencias o valoraciones.</p>
+                    <a href="contacto.html"><button class="btn">Enviar Consulta</button></a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Centro de Conocimientos - Todos los derechos reservados.</p>
+        <button id="btn-generar">Generar Frase Aleatoria</button>
+        <footer id="footer">
+            <p id="frase"></p>
+        </footer>
+    </footer>
+
+    <!-- Script for Menu Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Script para generar frase aleatoria
+        const frases = [
+            "El conocimiento es poder.",
+            "La curiosidad es la clave del aprendizaje.",
+            "Cada día es una nueva oportunidad para aprender.",
+            "La educación es la mejor inversión.",
+            "El aprendizaje nunca se detiene."
+        ];
+
+        const btnGenerar = document.getElementById('btn-generar');
+        const fraseElemento = document.getElementById('frase');
+
+        btnGenerar.addEventListener('click', () => {
+            const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+            fraseElemento.textContent = fraseAleatoria;
+        });
+    </script>
+</body>
+</html>
